@@ -47,9 +47,9 @@ class EventListener implements Listener {
     	if($packet->pid() == Info::LOGIN_PACKET){
     		if($packet->protocol1 < Info::CURRENT_PROTOCOL){
     			//Check if outdated client message is custom
-    			if(CustomAlerts::getAPI()->isOutdatedClientMessageCustom()){
-    				CustomAlerts::getAPI()->setOutdatedClientMessage(CustomAlerts::getAPI()->getDefaultOutdatedClientMessage($player));
-    			}
+    			// if(CustomAlerts::getAPI()->isOutdatedClientMessageCustom()){
+    			// 	CustomAlerts::getAPI()->setOutdatedClientMessage(CustomAlerts::getAPI()->getDefaultOutdatedClientMessage($player));
+    			// }
     			//Outdated Client Kick Event
     			$this->plugin->getServer()->getPluginManager()->callEvent(new CustomAlertsOutdatedClientKickEvent($player));
     			//Check if Outdated Client message is not empty
